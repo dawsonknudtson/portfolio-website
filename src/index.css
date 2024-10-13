@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 :root {
-    font-size: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
 }
