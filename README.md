@@ -1,8 +1,8 @@
-# React + Vite
+# Message From Dawson
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Overview
+This project is a personal website designed to showcase my portfolio, skills, and contact information. As a Computer Science student driven by growth and an interest in AI/ML, this website serves as a platform to connect with potential collaborators, employers, and showcase the technologies I work with.
 
-Currently, two official plugins are available:
+Technologies used in this project : React, Framer Motion, Tailwind CSS, React(Icons)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I plan on hosting this website eventually just not right now :)
