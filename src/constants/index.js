@@ -3,8 +3,6 @@ import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 
-export const HERO_CONTENT = `I am a computer science student focused on driving person and professional growth. My interests lie in exploring the potential of artifical intelligence and machine learning. I am constantly seeking opportunities to learn, create and contribute to the tech landscape`;
-
 export const ABOUT_TEXT = `My journey in tech has involved hands-on experience with both front-end and back-end development. Some technologies I am currently using include React, Python, Java, ASP.NET / C#, SQL, GO, MongoDB and Node.JS. Outside of tech, I am commited to personal growth, learning about business, and staying active through lifting and martial arts `;
 
 export const EXPERIENCES = [
