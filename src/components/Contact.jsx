@@ -1,15 +1,21 @@
-import { CONTACT } from "../constants"
+import { FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion"
 
 const Contact = () => {
   return (
-    <div className="border-b border-neutral-900 pb-20">
-        <motion.h2 whileInView={{opacity:1, y:0}} initial={{opacity:0,y:-100}} transition={{duration:0.5}} className="my-10 text-center text-4xl">Get in Touch</motion.h2>
-        <div className="text-center tracking-tighter">
-            <motion.p whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{duration:1}} className="my-4">{CONTACT.address}</motion.p>
-            <motion.p whileInView={{opacity:1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}} className="my-4">{CONTACT.phoneNo}</motion.p>
-            <a href={'mailto:dawsonkbusiness@gmail.com'} className="border-b">{CONTACT.email}</a>
-        </div>
+    <div className="py-20">
+      <h2 className="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
+      <div className="flex justify-center space-x-8 text-2xl">
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+          <FaYoutube className="hover:text-[#DB0042] transition-colors" />
+        </a>
+        <a href="https://x.com/dawsonknudtson" target="_blank" rel="noopener noreferrer">
+          <FaTwitter className="hover:text-[#DB0042] transition-colors" />
+        </a>
+        <a href="https://www.instagram.com/dawsonknudtson/" target="_blank" rel="noopener noreferrer">
+          <FaInstagram className="hover:text-[#DB0042] transition-colors" />
+        </a>
+      </div>
     </div>
   )
 }

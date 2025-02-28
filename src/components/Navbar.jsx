@@ -2,6 +2,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 const NavBar = () => {
   return (
@@ -11,16 +12,19 @@ const NavBar = () => {
       </div>
       <div className="m-8 flex items-center justify-center gap-4 text-2xl">
         <a href="https://www.linkedin.com/in/dawson-knudtson/">
-          <FaLinkedin />
+          <FaLinkedin className="hover:text-[#DB0042] transition-colors" />
         </a>
         <a href="https://github.com/dawsonk04">
-          <FaGithub />
+          <FaGithub className="hover:text-[#DB0042] transition-colors" />
         </a>
         <a href="https://www.instagram.com/dawsonknudtson/">
-          <FaInstagram />
+          <FaInstagram className="hover:text-[#DB0042] transition-colors" />
         </a>
-        <a href="https://x.com/dawsonk04">
-          <FaTwitter />
+        <a href="https://x.com/dawsonknudtson">
+          <FaTwitter className="hover:text-[#DB0042] transition-colors" />
+        </a>
+        <a href="https://www.youtube.com/">
+          <FaYoutube className="hover:text-[#DB0042] transition-colors" />
         </a>
       </div>
     </nav>
