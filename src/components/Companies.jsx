@@ -19,16 +19,18 @@ const Companies = () => {
                 className="flex justify-center items-center px-4"
             >  
                 <div className="border-4 border-neutral-800 rounded-xl p-4 max-w-sm hover:border-neutral-700 transition-colors">
-                    
+                    <a 
+                        href="https://1st-marketing.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                    >
                         <img 
-                            href="https://1st-marketing.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
                             src={firstmarketing} 
                             alt="1st Marketing Company" 
                             className="w-48 h-auto object-contain mx-auto"
                         />
-                    
+                    </a>
                 </div>
             </motion.div>
         </div>
