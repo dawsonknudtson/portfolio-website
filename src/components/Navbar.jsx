@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
   return (
@@ -11,21 +12,41 @@ const NavBar = () => {
         
       </div>
       <div className="m-8 flex items-center justify-center gap-4 text-2xl">
-        <a href="https://www.linkedin.com/in/dawson-knudtson/">
+        <motion.a 
+          href="https://www.linkedin.com/in/dawson-knudtson/"
+          whileHover={{ scale: 1.3, y: -10 }}
+          transition={{ type: "spring", stiffness: 300, damping: 8 }}
+        >
           <FaLinkedin className="hover:text-[#DB0042] transition-colors" />
-        </a>
-        <a href="https://github.com/dawsonk04">
+        </motion.a>
+        <motion.a 
+          href="https://github.com/dawsonk04"
+          whileHover={{ scale: 1.3, y: -10 }}
+          transition={{ type: "spring", stiffness: 300, damping: 8 }}
+        >
           <FaGithub className="hover:text-[#DB0042] transition-colors" />
-        </a>
-        <a href="https://www.instagram.com/dawsonknudtson/">
+        </motion.a>
+        <motion.a 
+          href="https://www.instagram.com/dawsonknudtson/"
+          whileHover={{ scale: 1.3, y: -10 }}
+          transition={{ type: "spring", stiffness: 300, damping: 8 }}
+        >
           <FaInstagram className="hover:text-[#DB0042] transition-colors" />
-        </a>
-        <a href="https://x.com/dawsonknudtson">
+        </motion.a>
+        <motion.a 
+          href="https://x.com/dawsonknudtson"
+          whileHover={{ scale: 1.3, y: -10 }}
+          transition={{ type: "spring", stiffness: 300, damping: 8 }}
+        >
           <FaTwitter className="hover:text-[#DB0042] transition-colors" />
-        </a>
-        <a href="https://www.youtube.com/">
+        </motion.a>
+        <motion.a 
+          href="https://www.youtube.com/"
+          whileHover={{ scale: 1.3, y: -10 }}
+          transition={{ type: "spring", stiffness: 300, damping: 8 }}
+        >
           <FaYoutube className="hover:text-[#DB0042] transition-colors" />
-        </a>
+        </motion.a>
       </div>
     </nav>
   );

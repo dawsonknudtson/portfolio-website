@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 
-// This would typically come from a CMS or database
 const blogPosts = {
     "whats-happening-with-crypto": {
         title: "Whats Happening with crypto?",

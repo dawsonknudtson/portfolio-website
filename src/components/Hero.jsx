@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="flex flex-col">
             <div className="absolute top-8 left-8">
                 <Link to="/">
-                    <h1 className="text-2xl font-bold">Dawson</h1>
+                    <h1 className="text-2xl font-bold text-[#DB0042]">Dawson</h1>
                 </Link>
             </div>
             <div className="border-b border-neutral-900 pb-4">
