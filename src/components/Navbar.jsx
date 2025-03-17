@@ -17,35 +17,35 @@ const NavBar = () => {
           whileHover={{ scale: 1.3, y: -10 }}
           transition={{ type: "spring", stiffness: 300, damping: 8 }}
         >
-          <FaLinkedin className="hover:text-[#DB0042] transition-colors" />
+          <FaLinkedin className="hover:text-[#5fbca3] transition-colors" />
         </motion.a>
         <motion.a 
           href="https://github.com/dawsonk04"
           whileHover={{ scale: 1.3, y: -10 }}
           transition={{ type: "spring", stiffness: 300, damping: 8 }}
         >
-          <FaGithub className="hover:text-[#DB0042] transition-colors" />
+          <FaGithub className="hover:text-[#5fbca3] transition-colors" />
         </motion.a>
         <motion.a 
           href="https://www.instagram.com/dawsonknudtson/"
           whileHover={{ scale: 1.3, y: -10 }}
           transition={{ type: "spring", stiffness: 300, damping: 8 }}
         >
-          <FaInstagram className="hover:text-[#DB0042] transition-colors" />
+          <FaInstagram className="hover:text-[#5fbca3] transition-colors" />
         </motion.a>
         <motion.a 
           href="https://x.com/dawsonknudtson"
           whileHover={{ scale: 1.3, y: -10 }}
           transition={{ type: "spring", stiffness: 300, damping: 8 }}
         >
-          <FaTwitter className="hover:text-[#DB0042] transition-colors" />
+          <FaTwitter className="hover:text-[#5fbca3] transition-colors" />
         </motion.a>
         <motion.a 
           href="https://www.youtube.com/"
           whileHover={{ scale: 1.3, y: -10 }}
           transition={{ type: "spring", stiffness: 300, damping: 8 }}
         >
-          <FaYoutube className="hover:text-[#DB0042] transition-colors" />
+          <FaYoutube className="hover:text-[#5fbca3] transition-colors" />
         </motion.a>
       </div>
     </nav>
