@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
-import bitcoin from "../images/bitcoin.jpg"
 
 const blogPosts = {
     "whats-happening-with-crypto": {
@@ -98,7 +97,7 @@ const BlogPost = () => {
             <p className="text-neutral-500 mb-8">{post.date}</p>
             {post.title === "Whats Happening with crypto?" && (
                 <div className="mb-8">
-                    <img src={bitcoin} alt="Bitcoin Market Analysis" className="w-full h-[400px] object-cover rounded-xl shadow-lg" />
+                   
                 </div>
             )}
             <div dangerouslySetInnerHTML={{ __html: post.content }} />

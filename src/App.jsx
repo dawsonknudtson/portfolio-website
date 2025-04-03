@@ -1,7 +1,5 @@
 import NavBar from "./components/Navbar";
 import Hero from "./components/Hero"
-import About from "./components/About"
-import Technologies from "./components/Technologies"
 import Contact from "./components/Contact";
 import BlogPost from "./pages/Blog";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -12,7 +10,6 @@ const HomePage = () => (
     <NavBar />
     <Hero />
     {/* <About /> */}
-    <Technologies />
     <Contact />
   </>
 );
