@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 
 const blogPosts = {
     "whats-happening-with-crypto": {
-        title: "Whats Happening with crypto?",
-        date: "Febuary 28, 2025",
+        title: "What's Happening with Crypto?",
+        date: "February 28, 2025",
         content: `
             <div class="prose prose-invert max-w-none">
                 <p class="text-2xl font-bold mb-6">My view on the current crypto economy can be summed up in one word:</p>
@@ -95,11 +95,6 @@ const BlogPost = () => {
         >
             <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
             <p className="text-neutral-500 mb-8">{post.date}</p>
-            {post.title === "Whats Happening with crypto?" && (
-                <div className="mb-8">
-                   
-                </div>
-            )}
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </motion.div>
     );
