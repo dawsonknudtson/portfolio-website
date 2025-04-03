@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react"
 
 const blogPosts = {
     "crypto-market": {
