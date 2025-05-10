@@ -1,7 +1,6 @@
 import NavBar from "./components/Navbar";
 import Hero from "./components/Hero"
 import Contact from "./components/Contact";
-import BlogPost from "./pages/Blog";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -10,7 +9,6 @@ const HomePage = () => (
   <>
     <NavBar />
     <Hero />
-    {/* <About /> */}
     <Contact />
   </>
 );
@@ -43,7 +41,6 @@ const App = () => {
         >
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </motion.div>
       </div>
