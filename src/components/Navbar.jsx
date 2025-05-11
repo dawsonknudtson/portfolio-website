@@ -8,10 +8,7 @@ import firstMarketing from "../images/1'st.png";
 
 const NavBar = () => {
   return (
-    <nav className="mb-12 sm:mb-20 flex items-center justify-between py-4 sm:py-6">
-      <div className="flex flex-shrink-0 items-center">
-        
-      </div>
+    <nav className="mb-12 sm:mb-20 flex items-center justify-end py-4 sm:py-6">
       <div className="mx-4 sm:m-8 flex items-center justify-center gap-3 sm:gap-4 text-xl sm:text-2xl">
         <motion.a 
           href="https://1st-marketing.com"
