@@ -59,7 +59,7 @@ const Hero = () => {
                         {posts.map((post) => {
                             console.log('Rendering post:', post); // Log each post as it's rendered
                             return (
-                                <article key={post.slug} className="border-b border-gray-200 pb-8">
+                                <article key={post.slug} className="pb-8">
                                     <h2 className="text-2xl font-semibold mb-2">
                                         <Link to={`/blog/${post.slug}`} className="hover:text-blue-500 transition-colors">
                                             {post.title}
