@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const [posts, setPosts] = useState([]);
@@ -60,7 +61,9 @@ const Hero = () => {
                             return (
                                 <article key={post.slug} className="border-b border-gray-200 pb-8">
                                     <h2 className="text-2xl font-semibold mb-2">
-                                        {post.title}
+                                        <Link to={`/blog/${post.slug}`} className="hover:text-blue-500 transition-colors">
+                                            {post.title}
+                                        </Link>
                                     </h2>
                                     {post.summary && (
                                         <p className="text-gray-600 mb-4">

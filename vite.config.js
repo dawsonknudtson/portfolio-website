@@ -10,7 +10,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 export default defineConfig({
   plugins: [
     mdx({
-      providerImportSource: "@mdx-js/react",
+      providerImportSource: '@mdx-js/react',
       remarkPlugins: [
         remarkParse,
         remarkFrontmatter,
@@ -19,7 +19,7 @@ export default defineConfig({
       rehypePlugins: [],
       format: 'mdx',
       recmaPlugins: [],
-      development: process.env.NODE_ENV === 'development'
+      development: process.env.NODE_ENV === 'development',
     }),
     react(),
     nodePolyfills({

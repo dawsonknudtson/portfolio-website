@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
+import BlogPost from './components/BlogPost';
 
 const HomePage = () => (
   <>
@@ -64,6 +65,7 @@ const App = () => {
         >
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </motion.div>
       </div>
