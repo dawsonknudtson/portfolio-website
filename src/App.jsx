@@ -1,6 +1,5 @@
 import NavBar from "./components/Navbar";
 import Hero from "./components/Hero"
-import Contact from "./components/Contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -12,8 +11,7 @@ const HomePage = () => (
   <>
     <NavBar />
     <Hero />
-    <Contact />
-  </>
+    </>
 );
 
 const App = () => {
