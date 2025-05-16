@@ -42,7 +42,7 @@ const Hero = () => {
     if (error) {
         return (
             <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
-                <div className="max-w-2xl w-full px-4 sm:px-6">
+                <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto">
                     <p className="text-red-500">Error loading posts: {error}</p>
                 </div>
             </div>
@@ -51,22 +51,21 @@ const Hero = () => {
 
     return (
         <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
-            <div className="max-w-2xl w-full px-4 sm:px-6">
+            <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto">
                 {posts.length === 0 ? (
                     <p>Loading posts...</p>
                 ) : (
                     <div className="space-y-12">
                         {posts.map((post) => {
-                            console.log('Rendering post:', post); // Log each post as it's rendered
                             return (
-                                <article key={post.slug} className="pb-8">
+                                <article key={post.slug} className="pb-8 text-left">
                                     <h2 className="text-2xl font-semibold mb-2">
                                         <Link to={`/blog/${post.slug}`} className="hover:text-[#5fbca3] transition-colors">
                                             {post.title}
                                         </Link>
                                     </h2>
                                     {post.summary && (
-                                        <p className="text-gray-600 mb-4">
+                                        <p className="text-gray-400 mb-4">
                                             {post.summary}
                                         </p>
                                     )}
