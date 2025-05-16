@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MDXProvider } from '@mdx-js/react/lib/index.js';
+import * as jsxRuntime from 'react/jsx-dev-runtime';
+import { compile, evaluate } from '@mdx-js/mdx';
 
 const BlogPost = () => {
     const { slug } = useParams();
@@ -10,30 +12,23 @@ const BlogPost = () => {
     useEffect(() => {
         const loadPost = async () => {
             try {
+                let content;
+                let postInfo;
+
                 if (import.meta.env.DEV) {
-                    // Development loading (existing code)
-                    const modules = import.meta.glob('/public/posts/*.mdx', { 
-                        eager: true,
-                        import: 'default'
-                    });
+                    // In development, load from public directory
+                    const [contentRes, indexRes] = await Promise.all([
+                        fetch(`/posts/${slug}.mdx`),
+                        fetch('/posts/index.json')
+                    ]);
 
-                    const postModule = Object.entries(modules).find(
-                        ([path]) => path.includes(slug)
-                    );
-
-                    if (!postModule) {
-                        throw new Error('Post not found');
+                    if (!contentRes.ok || !indexRes.ok) {
+                        throw new Error('Failed to fetch post or index');
                     }
 
-                    const rawContent = await import(`/public/posts/${slug}.mdx?raw`);
-                    const matter = (await import('gray-matter')).default;
-                    const { data: frontmatter } = matter(rawContent.default);
-
-                    setPost({
-                        title: frontmatter.title,
-                        date: frontmatter.date,
-                        Content: postModule[1]
-                    });
+                    content = await contentRes.text();
+                    const index = await indexRes.json();
+                    postInfo = index.find(p => p.slug === slug);
                 } else {
                     // Production loading
                     const [contentRes, indexRes] = await Promise.all([
@@ -45,24 +40,32 @@ const BlogPost = () => {
                         throw new Error('Post not found');
                     }
 
-                    const content = await contentRes.text();
+                    content = await contentRes.text();
                     const index = await indexRes.json();
-                    const postInfo = index.find(p => p.slug === slug);
-
-                    if (!postInfo) {
-                        throw new Error('Post not found');
-                    }
-
-                    const matter = (await import('gray-matter')).default;
-                    const { data: frontmatter, content: mdxContent } = matter(content);
-
-                    setPost({
-                        title: frontmatter.title,
-                        date: frontmatter.date,
-                        Content: mdxContent // Note: You'll need to process this MDX content
-                    });
+                    postInfo = index.find(p => p.slug === slug);
                 }
+
+                if (!postInfo) {
+                    throw new Error('Post not found in index');
+                }
+
+                console.log('Loaded post content:', content.slice(0, 100) + '...');
+                console.log('Post info:', postInfo);
+
+                // Compile and evaluate MDX content
+                const { default: Content } = await evaluate(content, {
+                    ...jsxRuntime,
+                    development: true,
+                    Fragment: jsxRuntime.Fragment,
+                    jsxDEV: jsxRuntime.jsxDEV
+                });
+
+                setPost({
+                    ...postInfo,
+                    Content
+                });
             } catch (err) {
+                console.error('Error loading post:', err);
                 setError(err.message);
             }
         };

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import matter from 'gray-matter';
 
 const Hero = () => {
     const [posts, setPosts] = useState([]);
@@ -8,46 +9,22 @@ const Hero = () => {
     useEffect(() => {
         const loadPosts = async () => {
             try {
-                // In development, use import.meta.glob
-                if (import.meta.env.DEV) {
-                    const rawPosts = import.meta.glob('/public/posts/*.mdx', { 
-                        eager: true,
-                        as: 'raw'
-                    });
-
-                    const { default: matter } = await import('gray-matter');
-
-                    const postsArray = Object.entries(rawPosts).map(([path, content]) => {
-                        const slug = path.split('/').pop().replace('.mdx', '');
-                        const { data: frontmatter } = matter(content);
-                        
-                        return {
-                            title: frontmatter.title || 'Untitled',
-                            date: frontmatter.date || new Date().toISOString(),
-                            summary: frontmatter.summary || '',
-                            slug
-                        };
-                    });
-
-                    const validPosts = postsArray.sort((a, b) => 
-                        new Date(b.date) - new Date(a.date)
-                    );
-                    
-                    setPosts(validPosts);
-                } else {
-                    // In production, fetch from public URL
-                    const response = await fetch('/posts/index.json');
-                    if (!response.ok) {
-                        throw new Error('Failed to fetch posts index');
-                    }
-                    const posts = await response.json();
-                    setPosts(posts);
+                // Always fetch from the generated index.json
+                const response = await fetch('/posts/index.json');
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch posts index');
                 }
+                
+                const posts = await response.json();
+                console.log('Loaded posts:', posts);
+                setPosts(posts.sort((a, b) => new Date(b.date) - new Date(a.date)));
             } catch (err) {
-                setError(err.message);
                 console.error('Error loading posts:', err);
+                setError(err.message);
             }
         };
+
         loadPosts();
     }, []);
 
