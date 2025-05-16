@@ -43,7 +43,7 @@ const BlogPost = () => {
     if (error) {
         return (
             <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
-                <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto text-center">
+                <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto">
                     <p className="text-red-500">{error}</p>
                     <Link to="/" className="text-[#5fbca3] mt-4 inline-block">
                         ← Back to blog
@@ -56,7 +56,7 @@ const BlogPost = () => {
     if (!post) {
         return (
             <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
-                <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto text-center">
+                <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto">
                     <p>Loading post...</p>
                 </div>
             </div>
@@ -70,7 +70,7 @@ const BlogPost = () => {
                     ← Back to blog
                 </Link>
                 
-                <article className="prose prose-invert max-w-none text-center">
+                <article className="prose prose-invert max-w-none text-left">
                     <h1 className="text-4xl font-bold mb-4 text-white">{post.title}</h1>
                     <time className="text-sm text-gray-400 block mb-12">
                         {new Date(post.date).toLocaleDateString('en-US', {
