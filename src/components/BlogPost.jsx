@@ -28,8 +28,8 @@ const BlogPost = () => {
                 const { data: frontmatter } = matter(rawContent.default);
 
                 setPost({
-                    ...frontmatter,
-                    slug,
+                    title: frontmatter.title,
+                    date: frontmatter.date,
                     Content: postModule[1]
                 });
             } catch (err) {
@@ -43,9 +43,9 @@ const BlogPost = () => {
     if (error) {
         return (
             <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
-                <div className="max-w-2xl w-full px-4 sm:px-6">
+                <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto text-center">
                     <p className="text-red-500">{error}</p>
-                    <Link to="/" className="text-blue-500 mt-4 inline-block">
+                    <Link to="/" className="text-[#5fbca3] mt-4 inline-block">
                         ← Back to blog
                     </Link>
                 </div>
@@ -56,7 +56,7 @@ const BlogPost = () => {
     if (!post) {
         return (
             <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
-                <div className="max-w-2xl w-full px-4 sm:px-6">
+                <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto text-center">
                     <p>Loading post...</p>
                 </div>
             </div>
@@ -65,23 +65,25 @@ const BlogPost = () => {
 
     return (
         <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
-            <div className="max-w-2xl w-full px-4 sm:px-6">
-                <Link to="/" className="text-blue-500 mb-8 inline-block">
+            <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto">
+                <Link to="/" className="text-[#5fbca3] mb-8 inline-block">
                     ← Back to blog
                 </Link>
                 
-                <article className="prose max-w-none">
-                    <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-                    <time className="text-sm text-gray-500 block mb-8">
+                <article className="prose prose-invert max-w-none text-center">
+                    <h1 className="text-4xl font-bold mb-4 text-white">{post.title}</h1>
+                    <time className="text-sm text-gray-400 block mb-12">
                         {new Date(post.date).toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric'
                         })}
                     </time>
-                    <MDXProvider>
-                        <post.Content />
-                    </MDXProvider>
+                    <div className="text-white">
+                        <MDXProvider>
+                            <post.Content />
+                        </MDXProvider>
+                    </div>
                 </article>
             </div>
         </div>
