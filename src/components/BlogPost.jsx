@@ -10,28 +10,58 @@ const BlogPost = () => {
     useEffect(() => {
         const loadPost = async () => {
             try {
-                const modules = import.meta.glob('/src/posts/*.mdx', { 
-                    eager: true,
-                    import: 'default'
-                });
+                if (import.meta.env.DEV) {
+                    // Development loading (existing code)
+                    const modules = import.meta.glob('/public/posts/*.mdx', { 
+                        eager: true,
+                        import: 'default'
+                    });
 
-                const postModule = Object.entries(modules).find(
-                    ([path]) => path.includes(slug)
-                );
+                    const postModule = Object.entries(modules).find(
+                        ([path]) => path.includes(slug)
+                    );
 
-                if (!postModule) {
-                    throw new Error('Post not found');
+                    if (!postModule) {
+                        throw new Error('Post not found');
+                    }
+
+                    const rawContent = await import(`/public/posts/${slug}.mdx?raw`);
+                    const matter = (await import('gray-matter')).default;
+                    const { data: frontmatter } = matter(rawContent.default);
+
+                    setPost({
+                        title: frontmatter.title,
+                        date: frontmatter.date,
+                        Content: postModule[1]
+                    });
+                } else {
+                    // Production loading
+                    const [contentRes, indexRes] = await Promise.all([
+                        fetch(`/posts/${slug}.mdx`),
+                        fetch('/posts/index.json')
+                    ]);
+
+                    if (!contentRes.ok || !indexRes.ok) {
+                        throw new Error('Post not found');
+                    }
+
+                    const content = await contentRes.text();
+                    const index = await indexRes.json();
+                    const postInfo = index.find(p => p.slug === slug);
+
+                    if (!postInfo) {
+                        throw new Error('Post not found');
+                    }
+
+                    const matter = (await import('gray-matter')).default;
+                    const { data: frontmatter, content: mdxContent } = matter(content);
+
+                    setPost({
+                        title: frontmatter.title,
+                        date: frontmatter.date,
+                        Content: mdxContent // Note: You'll need to process this MDX content
+                    });
                 }
-
-                const rawContent = await import(`/src/posts/${slug}.mdx?raw`);
-                const matter = (await import('gray-matter')).default;
-                const { data: frontmatter } = matter(rawContent.default);
-
-                setPost({
-                    title: frontmatter.title,
-                    date: frontmatter.date,
-                    Content: postModule[1]
-                });
             } catch (err) {
                 setError(err.message);
             }

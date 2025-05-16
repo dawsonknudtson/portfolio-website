@@ -8,32 +8,44 @@ const Hero = () => {
     useEffect(() => {
         const loadPosts = async () => {
             try {
-                const rawPosts = import.meta.glob('/src/posts/*.mdx', { 
-                    eager: true,
-                    as: 'raw'
-                });
+                // In development, use import.meta.glob
+                if (import.meta.env.DEV) {
+                    const rawPosts = import.meta.glob('/public/posts/*.mdx', { 
+                        eager: true,
+                        as: 'raw'
+                    });
 
-                const { default: matter } = await import('gray-matter');
+                    const { default: matter } = await import('gray-matter');
 
-                const postsArray = Object.entries(rawPosts).map(([path, content]) => {
-                    const slug = path.split('/').pop().replace('.mdx', '');
-                    const { data: frontmatter } = matter(content);
+                    const postsArray = Object.entries(rawPosts).map(([path, content]) => {
+                        const slug = path.split('/').pop().replace('.mdx', '');
+                        const { data: frontmatter } = matter(content);
+                        
+                        return {
+                            title: frontmatter.title || 'Untitled',
+                            date: frontmatter.date || new Date().toISOString(),
+                            summary: frontmatter.summary || '',
+                            slug
+                        };
+                    });
+
+                    const validPosts = postsArray.sort((a, b) => 
+                        new Date(b.date) - new Date(a.date)
+                    );
                     
-                    return {
-                        title: frontmatter.title || 'Untitled',
-                        date: frontmatter.date || new Date().toISOString(),
-                        summary: frontmatter.summary || '',
-                        slug
-                    };
-                });
-
-                const validPosts = postsArray.sort((a, b) => 
-                    new Date(b.date) - new Date(a.date)
-                );
-                
-                setPosts(validPosts);
+                    setPosts(validPosts);
+                } else {
+                    // In production, fetch from public URL
+                    const response = await fetch('/posts/index.json');
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch posts index');
+                    }
+                    const posts = await response.json();
+                    setPosts(posts);
+                }
             } catch (err) {
                 setError(err.message);
+                console.error('Error loading posts:', err);
             }
         };
         loadPosts();
