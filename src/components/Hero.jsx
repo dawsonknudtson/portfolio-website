@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import matter from 'gray-matter';
 
 const Hero = () => {
     const [posts, setPosts] = useState([]);
