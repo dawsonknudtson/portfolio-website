@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { MDXProvider } from '@mdx-js/react/lib/index.js';
 import * as jsxRuntime from 'react/jsx-runtime';
 import { evaluate } from '@mdx-js/mdx';
+import matter from 'gray-matter';
 
 const BlogPost = () => {
     const { slug } = useParams();
@@ -33,17 +34,18 @@ const BlogPost = () => {
                     throw new Error('Post not found in index');
                 }
 
-                console.log('Loaded post content:', content.slice(0, 100) + '...');
-                console.log('Post info:', postInfo);
+                // Parse frontmatter and content
+                const { data: frontmatter, content: mdxContent } = matter(content);
 
                 // Compile and evaluate MDX content with proper runtime
-                const { default: Content } = await evaluate(content, {
+                const { default: Content } = await evaluate(mdxContent, {
                     ...jsxRuntime,
                     development: false
                 });
 
                 setPost({
                     ...postInfo,
+                    ...frontmatter,
                     Content
                 });
             } catch (err) {
