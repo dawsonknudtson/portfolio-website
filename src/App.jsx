@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
-import BlogPost from './components/BlogPost';
 
 const HomePage = () => (
   <>
@@ -40,10 +39,9 @@ const App = () => {
           <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> 
         </div>
 
-        {/* Fixed name that won't scroll */}
-        <div className="fixed top-4 sm:top-8 left-4 sm:left-8 z-10 flex items-center gap-2">
+        <div className="fixed top-4 sm:top-8 left-8 sm:left-16 z-10 flex items-center gap-2">
           <Link to="/">
-            <h1 className="text-xl sm:text-2xl font-bold text-[#5fbca3]">Dawson</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-[#5fbca3] ">Dawson</h1>
           </Link>
           <button 
             onClick={toggleDarkMode}
@@ -63,7 +61,6 @@ const App = () => {
         >
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </motion.div>
       </div>
