@@ -45,7 +45,7 @@ const Hero = () => {
         return (
             <div className="flex flex-col justify-center min-h-screen pt-24 sm:pt-32">
                 <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto text-center">
-                    <p className="text-gray-400">Loading blog posts...</p>
+                    <p className="text-gray-600 dark:text-gray-400">Loading blog posts...</p>
                 </div>
             </div>
         );
@@ -71,7 +71,7 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-12"
                 >                
-                    <p className="text-gray-400 text-lg">
+                    <p className="text-gray-600 dark:text-gray-400 text-lg">
                         Thoughts, ideas, and insights
                     </p>
                 </motion.div>
@@ -84,7 +84,7 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-center py-12"
                     >
-                        <p className="text-gray-400">No blog posts yet. Stay tuned!</p>
+                        <p className="text-gray-600 dark:text-gray-400">No blog posts yet. Stay tuned!</p>
                     </motion.div>
                 ) : (
                     <div className="space-y-8">
@@ -94,23 +94,23 @@ const Hero = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="border-b border-gray-700 pb-8 last:border-b-0"
+                                className="border-b border-gray-300 dark:border-gray-700 pb-8 last:border-b-0"
                             >
                                 <Link 
                                     to={`/blog/${post.slug}`}
                                     className="group block"
                                 >
-                                    <h2 className="text-xl sm:text-2xl font-semibold mb-3 text-white group-hover:text-[#5fbca3] transition-colors">
+                                    <h2 className="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-[#5fbca3] transition-colors">
                                         {post.title}
                                     </h2>
                                     
                                     {post.summary && (
-                                        <p className="text-gray-400 mb-4 leading-relaxed">
+                                        <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                                             {post.summary}
                                         </p>
                                     )}
                                     
-                                    <div className="flex items-center justify-between text-sm text-gray-500">
+                                    <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-500">
                                         <time>
                                             {new Date(post.date).toLocaleDateString('en-US', {
                                                 year: 'numeric',
@@ -124,7 +124,7 @@ const Hero = () => {
                                                 {post.tags.slice(0, 3).map(tag => (
                                                     <span 
                                                         key={tag}
-                                                        className="px-2 py-1 bg-gray-800 rounded-md text-xs"
+                                                        className="px-2 py-1 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-md text-xs"
                                                     >
                                                         {tag}
                                                     </span>
