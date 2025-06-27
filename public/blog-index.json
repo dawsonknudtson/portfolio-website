@@ -1,5 +1,17 @@
 [
   {
+    "slug": "zero-sum-games",
+    "title": "Don't Play Zero Sum Games",
+    "date": "2025-06-28",
+    "summary": "Don't Play games that are intended for you to lose",
+    "author": "Dawson",
+    "tags": [
+      "Advice",
+      "Life"
+    ],
+    "filename": "zero-sum-games.md"
+  },
+  {
     "slug": "ai-overhyped",
     "title": "AI is overhyped",
     "date": "2025-06-26",
