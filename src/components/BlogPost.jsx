@@ -11,7 +11,7 @@ const BlogPost = () => {
     useEffect(() => {
         const loadPost = async () => {
             try {
-                // Load blog index to get post metadata
+                //  Load blog index to get post metadata
                 const indexResponse = await fetch('/blog-index.json');
                 if (!indexResponse.ok) {
                     throw new Error('Failed to fetch blog index');
