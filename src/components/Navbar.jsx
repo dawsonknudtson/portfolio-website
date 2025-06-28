@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 const NavBar = () => {
   return (
-    <nav className="mb-8 sm:mb-12 lg:mb-20 flex items-center justify-end py-4 sm:py-6">
-      <div className="mx-2 sm:mx-4 lg:m-8 flex items-center justify-center gap-3 sm:gap-4 lg:gap-8 text-sm sm:text-base lg:text-lg flex-wrap">
-      <motion.a 
+    <nav className="mb-6 sm:mb-8 lg:mb-12 xl:mb-20 flex items-center justify-end py-2 sm:py-4 lg:py-6">
+      <div className="mx-1 sm:mx-2 lg:mx-4 xl:m-8 flex items-center justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-8 text-xs sm:text-sm md:text-base lg:text-lg flex-wrap">
+        <motion.a 
           href="#"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
+          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap hidden sm:block"
         >
           Archive
         </motion.a>
@@ -19,9 +19,9 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
+          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap hidden sm:block"
         >
-          Instagram
+          IG
         </motion.a>
         <motion.a 
           href="https://x.com/dawsonknudtson"
@@ -41,7 +41,7 @@ const NavBar = () => {
           transition={{ duration: 0.2 }}
           className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
         >
-          Youtube
+          YT
         </motion.a>
         <motion.a 
           href="https://github.com/dawsonknudtson"
