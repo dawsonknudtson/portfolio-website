@@ -36,7 +36,7 @@ const App = () => {
   return (
     <Router>
       {/* Fixed header - completely isolated from transforms */}
-      <div className="fixed top-2 sm:top-4 lg:top-8 left-2 sm:left-4 lg:left-14 xl:left-40 z-50 flex items-center gap-1 sm:gap-2">
+      <div className="fixed top-2 sm:top-4 lg:top-8 left-2 sm:left-4 lg:left-14 xl:left-40 z-50 flex items-center gap-1 sm:gap-2" style={{ transform: 'translateZ(0)' }}>
         <Link to="/">
           <h1 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-[#5fbca3] ">Dawson</h1>
         </Link>
