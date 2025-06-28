@@ -19,7 +19,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap hidden sm:block"
+          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
         >
           IG
         </motion.a>
