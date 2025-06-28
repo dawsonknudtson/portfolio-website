@@ -40,18 +40,18 @@ const App = () => {
           <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> 
         </div>
 
-        <div className="fixed top-4 sm:top-8 left-14 sm:left-40 z-10 flex items-center gap-2">
+        <div className="fixed top-4 sm:top-8 left-4 sm:left-14 lg:left-40 z-10 flex items-center gap-2">
           <Link to="/">
-            <h1 className="text-xl sm:text-2xl font-bold text-[#5fbca3] ">Dawson</h1>
+            <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#5fbca3] ">Dawson</h1>
           </Link>
           <button 
             onClick={toggleDarkMode}
             className="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           >
             {darkMode ? (
-              <BsFillSunFill className="text-yellow-400" />
+              <BsFillSunFill className="text-yellow-400 text-sm sm:text-base" />
             ) : (
-              <BsFillMoonFill className="text-gray-400" />
+              <BsFillMoonFill className="text-gray-400 text-sm sm:text-base" />
             )}
           </button>
         </div>

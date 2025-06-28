@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 const NavBar = () => {
   return (
-    <nav className="mb-12 sm:mb-20 flex items-center justify-end py-4 sm:py-6">
-      <div className="mx-4 sm:m-8 flex items-center justify-center gap-6 sm:gap-8 text-base sm:text-lg">
+    <nav className="mb-8 sm:mb-12 lg:mb-20 flex items-center justify-end py-4 sm:py-6">
+      <div className="mx-2 sm:mx-4 lg:m-8 flex items-center justify-center gap-3 sm:gap-4 lg:gap-8 text-sm sm:text-base lg:text-lg flex-wrap">
       <motion.a 
           href="#"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all"
+          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
         >
           Archive
         </motion.a>
@@ -19,7 +19,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all"
+          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
         >
           Instagram
         </motion.a>
@@ -29,7 +29,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all"
+          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
         >
           X
         </motion.a>
@@ -39,7 +39,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all"
+          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
         >
           Youtube
         </motion.a>
@@ -49,7 +49,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all"
+          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
         >
           Code
         </motion.a>
