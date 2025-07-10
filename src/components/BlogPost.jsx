@@ -77,7 +77,7 @@ const BlogPost = () => {
             <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
                 <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto">
                     <p className="text-red-500 mb-4">Error: {error}</p>
-                    <Link to="/" className="text-[#5fbca3] hover:underline">
+                    <Link to="/" className="text-[#30b1fc] hover:underline">
                         ← Back to blog
                     </Link>
                 </div>
@@ -90,7 +90,7 @@ const BlogPost = () => {
             <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto">
                 <Link 
                     to="/" 
-                    className="text-[#5fbca3] hover:underline mb-8 inline-block"
+                    className="text-[#30b1fc] hover:underline mb-8 inline-block"
                 >
                     ← Back to blog
                 </Link>

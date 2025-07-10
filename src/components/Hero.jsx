@@ -100,7 +100,7 @@ const Hero = () => {
                                     to={`/blog/${post.slug}`}
                                     className="group block"
                                 >
-                                    <h2 className="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-[#5fbca3] transition-colors">
+                                    <h2 className="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-[#30b1fc] transition-colors">
                                         {post.title}
                                     </h2>
                                     
@@ -146,7 +146,7 @@ const Hero = () => {
                             >
                                 <button
                                     onClick={loadMorePosts}
-                                    className="px-6 py-3 border border-[#5fbca3] text-[#5fbca3] rounded-lg hover:bg-[#5fbca3] hover:text-white transition-colors"
+                                    className="px-6 py-3 border border-[#30b1fc] text-[#30b1fc] rounded-lg hover:bg-[#30b1fc] hover:text-white transition-colors"
                                 >
                                     Load More Posts ({posts.length - displayedPosts.length} remaining)
                                 </button>

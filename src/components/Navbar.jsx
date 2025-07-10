@@ -9,7 +9,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap hidden sm:block"
+          className="text-[#30b1fc] hover:font-bold transition-all whitespace-nowrap hidden sm:block"
         >
           Archive
         </motion.a>
@@ -19,7 +19,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
+          className="text-[#30b1fc] hover:font-bold transition-all whitespace-nowrap"
         >
           IG
         </motion.a>
@@ -29,7 +29,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
+          className="text-[#30b1fc] hover:font-bold transition-all whitespace-nowrap"
         >
           X
         </motion.a>
@@ -39,7 +39,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
+          className="text-[#30b1fc] hover:font-bold transition-all whitespace-nowrap"
         >
           YT
         </motion.a>
@@ -49,7 +49,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
-          className="text-[#5fbca3] hover:font-bold transition-all whitespace-nowrap"
+          className="text-[#30b1fc] hover:font-bold transition-all whitespace-nowrap"
         >
           Code
         </motion.a>

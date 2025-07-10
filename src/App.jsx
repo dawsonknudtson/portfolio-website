@@ -22,7 +22,7 @@ const App = () => {
     damping: 15
   });
 
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -30,7 +30,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    document.documentElement.classList.add('dark');
+    // Remove default dark class - start with light theme
+    document.documentElement.classList.remove('dark');
   }, []);
 
   return (
@@ -38,7 +39,7 @@ const App = () => {
       {/* Fixed header - completely isolated from transforms */}
       <div className="fixed top-2 sm:top-4 lg:top-8 left-2 sm:left-4 lg:left-14 xl:left-40 z-50 flex items-center gap-1 sm:gap-2" style={{ transform: 'translateZ(0)' }}>
         <Link to="/">
-          <h1 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-[#5fbca3] ">Dawson</h1>
+          <h1 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-[#30b1fc] ">Dawson</h1>
         </Link>
         <button 
           onClick={toggleDarkMode}
