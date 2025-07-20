@@ -30,8 +30,9 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Remove default dark class - start with light theme
-    document.documentElement.classList.remove('dark');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(prefersDark);
+    document.documentElement.classList.toggle('dark', prefersDark);
   }, []);
 
   return (
