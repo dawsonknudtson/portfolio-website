@@ -11,13 +11,12 @@ const OUTPUT_FILE = path.join(__dirname, '../public/blog-index.json');
 
 function generateBlogIndex() {
     try {
-        // Create posts directory if it doesn't exist
+
         if (!fs.existsSync(POSTS_DIR)) {
             fs.mkdirSync(POSTS_DIR, { recursive: true });
             console.log('Created posts directory');
         }
 
-        // Read all markdown files
         const files = fs.readdirSync(POSTS_DIR).filter(file => file.endsWith('.md'));
         
         const posts = files.map(file => {
@@ -25,7 +24,6 @@ function generateBlogIndex() {
             const fileContent = fs.readFileSync(filePath, 'utf8');
             const { data, content } = matter(fileContent);
             
-            // Get file stats for creation date if not in frontmatter
             const stats = fs.statSync(filePath);
             const slug = file.replace('.md', '');
             
@@ -40,10 +38,8 @@ function generateBlogIndex() {
             };
         });
 
-        // Sort by date (newest first)
         posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        // Write to public directory
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(posts, null, 2));
         console.log(`Generated blog index with ${posts.length} posts`);
         

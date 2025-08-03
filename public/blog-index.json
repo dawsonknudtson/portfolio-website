@@ -10,18 +10,5 @@
       "Life"
     ],
     "filename": "zero-sum-games.md"
-  },
-  {
-    "slug": "ai-overhyped",
-    "title": "AI is overhyped",
-    "date": "2025-06-26",
-    "summary": "After studying a little bit about AI/ML here are some of the reasons why I think AI is overhyped",
-    "author": "Dawson",
-    "tags": [
-      "ML",
-      "AI",
-      "Econonomy"
-    ],
-    "filename": "ai-overhyped.md"
   }
 ]

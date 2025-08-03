@@ -64,7 +64,7 @@ const Hero = () => {
     return (
         <div className="flex flex-col justify-start min-h-screen pt-24 sm:pt-32">
             <div className="max-w-2xl w-full px-4 sm:px-6 mx-auto">
-                {/* Header */}
+               
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -75,8 +75,7 @@ const Hero = () => {
                         Thoughts, ideas, and insights
                     </p>
                 </motion.div>
-
-                {/* Blog Posts */}
+                
                 {posts.length === 0 ? (
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -135,8 +134,7 @@ const Hero = () => {
                                 </Link>
                             </motion.article>
                         ))}
-                        
-                        {/* Load More Button */}
+                                                
                         {hasMorePosts && (
                             <motion.div
                                 initial={{ opacity: 0 }}

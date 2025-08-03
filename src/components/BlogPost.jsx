@@ -11,7 +11,6 @@ const BlogPost = () => {
     useEffect(() => {
         const loadPost = async () => {
             try {
-                //  Load blog index to get post metadata
                 const indexResponse = await fetch('/blog-index.json');
                 if (!indexResponse.ok) {
                     throw new Error('Failed to fetch blog index');
@@ -46,7 +45,6 @@ const BlogPost = () => {
         loadPost();
     }, [slug]);
 
-    // Simple markdown-to-HTML conversion (basic)
     const renderMarkdown = (markdown) => {
         return markdown
             .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">$1</h1>')
